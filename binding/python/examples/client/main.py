@@ -1,5 +1,5 @@
 import asyncio
-from raftify import RaftServiceClient
+from raftify import RaftServiceClient, ConfChangeRequest, ConfChangeSingle, ConfChangeType
 
 from ..state_machine import SetCommand
 
@@ -17,6 +17,18 @@ async def main() -> None:
     peers_json = await client.get_peers()
     print("Peers: ", peers_json)
 
+    addNode = ConfChangeSingle()
+    addNode.set_change_type(ConfChangeType.AddNode)
+    addNode.set_node_id(3)
+    removeNode = ConfChangeSingle()
+    removeNode.set_change_type(ConfChangeType.RemoveNode)
+    removeNode.set_node_id(9)
+    confChangeRequest = ConfChangeRequest([addNode], ["127.0.0.1:60069"])
+    conf_change_result = await client.change_config(confChangeRequest)
+    print("ConfChangeResult ", conf_change_result)
+
+    peers_json = await client.get_peers()
+    print("Peers: ", peers_json)
 
 if __name__ == "__main__":
     asyncio.run(main())
