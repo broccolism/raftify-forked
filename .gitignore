@@ -29,4 +29,6 @@ tests/fixtures
 tests/tests/fixtures
 logs
 
+# IntelliJ
 .idea
+.DS_Store
