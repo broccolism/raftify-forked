@@ -6,9 +6,11 @@ use tokio::sync::Mutex;
 use crate::{AbstractLogEntry, AbstractStateMachine, Peers};
 
 use super::{
-    server_response_message::{ConfChangeResponseResult, ResponseResult},
+    server_response_message::ResponseResult,
     ResponseMessage,
 };
+
+use super::common::confchange_response::ConfChangeResponseResult;
 
 pub enum LocalResponseMsg<
     LogEntry: AbstractLogEntry,

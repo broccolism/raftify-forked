@@ -32,9 +32,10 @@ use crate::{
         common::confchange_request::ConfChangeRequest, server_request_message::ServerRequestMsg,
     },
     response::server_response_message::{
-        ConfChangeResponseResult, RequestIdResponseResult, ResponseResult, ServerResponseMsg,
+        RequestIdResponseResult, ResponseResult, ServerResponseMsg,
     },
     AbstractLogEntry, AbstractStateMachine, StableStorage,
+    response::common::confchange_response::ConfChangeResponseResult,
 };
 
 #[derive(Clone)]

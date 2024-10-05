@@ -7,6 +7,8 @@ use self::{local_response_message::LocalResponseMsg, server_response_message::Se
 pub mod local_response_message;
 pub mod server_response_message;
 
+pub mod common;
+
 pub enum ResponseMessage<
     LogEntry: AbstractLogEntry,
     LogStorage: StableStorage + 'static,

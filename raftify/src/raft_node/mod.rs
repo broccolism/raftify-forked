@@ -45,9 +45,10 @@ use crate::{
     response::{
         local_response_message::LocalResponseMsg,
         server_response_message::{
-            ConfChangeResponseResult, RequestIdResponseResult, ResponseResult, ServerResponseMsg,
+            RequestIdResponseResult, ResponseResult, ServerResponseMsg,
         },
         ResponseMessage,
+        common::confchange_response::ConfChangeResponseResult,
     },
     utils::{membership::to_confchange_v2, oneshot_mutex::OneShotMutex},
     AbstractLogEntry, AbstractStateMachine, ClusterJoinTicket, Config, Error, InitialRole, Peers,
