@@ -2,6 +2,7 @@ pub mod abstract_types;
 pub mod cli;
 pub mod cluster_join_ticket;
 pub mod confchange_request;
+pub mod confchange_response;
 pub mod config;
 pub mod errors;
 pub mod formatter;

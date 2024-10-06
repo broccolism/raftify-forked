@@ -30,6 +30,7 @@ impl PyRaftServiceClient {
         conf_change: PyConfChangeRequest,
         py: Python<'a>,
     ) -> PyResult<&'a PyAny> {
+        // @@ TODO: change return type?
         let mut client = self.inner.clone();
         let arg: raftify::raft_service::ChangeConfigArgs = conf_change.inner.into();
 

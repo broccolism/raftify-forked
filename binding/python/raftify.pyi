@@ -329,6 +329,7 @@ class RaftServiceClient:
     @staticmethod
     async def build(addr: str) -> "RaftServiceClient":
         """ """
+    # @@ TODO: return type
     async def change_config(self, conf_change: "ConfChangeRequest") -> None:
         """ """
     async def send_message(self, message: "Message") -> None:
